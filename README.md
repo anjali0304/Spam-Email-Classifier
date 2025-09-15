@@ -1,3 +1,18 @@
+Spam Email Classifier
+
+Spam Email Classifier is a Python-based machine learning project that automatically detects whether an email is Spam or Ham. The system uses TF-IDF vectorization to convert text into numerical features and Multinomial Naive Bayes for classification. It demonstrates the full workflow of text preprocessing, feature extraction, model training, evaluation, and prediction.
+
+Dataset
+->The project uses email messages labeled as Spam or Ham.
+ ->Each record contains:
+message: The text of the email.
+label: The class (spam or ham).
+->You can use a small sample dataset included in the repository or a public dataset like the SMS Spam Collection Dataset from Kaggle.
+->All datasets are simulated or publicly available, with no personal or sensitive information used.
+->Users can also test with custom email messages for predictions.
+
+Code Example:
+
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
@@ -6,21 +21,15 @@ from sklearn.metrics import accuracy_score
 
 data = {
     "message": [
-        "Congratulations! You won a lottery of $1,000,000",
-        "Hello friend, how are you doing today?",
-        "Free entry in 2 crore prize, click the link now",
-        "Let’s catch up tomorrow for lunch",
-        "Win cash instantly!!! Claim your prize",
-        "Reminder: Your appointment is scheduled tomorrow",
-        "You have been selected for a free gift voucher",
-        "Meeting is rescheduled to 4 PM today"
+        "Congratulations! You won a lottery",
+        "Hello friend, how are you?",
+        "Win cash instantly! Claim your prize",
+        "Meeting is rescheduled to 4 PM"
     ],
-    "label": ["spam", "ham", "spam", "ham", "spam", "ham", "spam", "ham"]
+    "label": ["spam", "ham", "spam", "ham"]
 }
 
 df = pd.DataFrame(data)
-
-
 df["label"] = df["label"].map({"ham": 0, "spam": 1})
 
 X_train, X_test, y_train, y_test = train_test_split(
@@ -35,17 +44,31 @@ model = MultinomialNB()
 model.fit(X_train_vec, y_train)
 
 y_pred = model.predict(X_test_vec)
-print(" Accuracy:", accuracy_score(y_test, y_pred))
+print("Accuracy:", accuracy_score(y_test, y_pred))
 
+Explanation:
+->Data Preparation: A small dataset of email messages labeled as spam or ham is used. Labels are converted to 0 (ham) and 1 (spam).
+->TF-IDF Vectorization: Converts text into numerical features so the model can process it.
+->Model Training: A Multinomial Naive Bayes model is trained on the vectorized data.
+->Evaluation: Accuracy is calculated to check model performance.
+->Prediction: The trained model can classify new email messages as Spam or Ham.
 
-test_messages = [
-    "Congratulations! You won a free iPhone!",
-    "Hey, are we meeting for lunch tomorrow?",
-    "Get premium movies free now!"
-]
+Setup & Usage
+Clone the repository:
+git clone <your-repo-link>
+cd spam-email-classifier
 
-test_vec = vectorizer.transform(test_messages)
-predictions = model.predict(test_vec)
+Install dependencies:
+pip install -r requirements.txt
 
-for msg, pred in zip(test_messages, predictions):
-    print(f"Message: {msg}\nPrediction: {'Spam' if pred == 1 else 'Ham'}\n")
+Run the classifier:
+python spam_classifier.py
+
+Test with custom messages included in the script.
+
+Technologies:
+Python
+pandas
+scikit-learn
+TF-IDF Vectorization
+Multinomial Naive Bayes
