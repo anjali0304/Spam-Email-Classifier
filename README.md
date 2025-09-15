@@ -85,23 +85,23 @@ Prediction: The trained model can classify new email messages as Spam or Ham.
 
 
 
-Clone the repository:
+1.Clone the repository:
 
 git clone <your-repo-link>
 cd spam-email-classifier
 
 
-Install dependencies:
+2.Install dependencies:
 
 pip install -r requirements.txt
 
 
-Run the classifier:
+3.Run the classifier:
 
 python spam_classifier.py
 
 
-Test with custom messages included in the script.
+4.Test with custom messages included in the script.
 
 
 
