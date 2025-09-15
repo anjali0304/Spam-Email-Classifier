@@ -77,7 +77,7 @@ Prediction: The trained model can classify new email messages as Spam or Ham.
 
 
 
-Setup & Usage
+-> Setup & Usage
 
 
 
