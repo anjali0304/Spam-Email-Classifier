@@ -2,9 +2,9 @@ Spam Email Classifier
 
 Spam Email Classifier is a Python-based machine learning project that automatically detects whether an email is Spam or Ham. The system uses TF-IDF vectorization to convert text into numerical features and Multinomial Naive Bayes for classification. It demonstrates the full workflow of text preprocessing, feature extraction, model training, evaluation, and prediction.
 
-Dataset
+Dataset:
 ->The project uses email messages labeled as Spam or Ham.
- ->Each record contains:
+->Each record contains:
 message: The text of the email.
 label: The class (spam or ham).
 ->You can use a small sample dataset included in the repository or a public dataset like the SMS Spam Collection Dataset from Kaggle.
@@ -54,17 +54,17 @@ Explanation:
 ->Prediction: The trained model can classify new email messages as Spam or Ham.
 
 Setup & Usage
-Clone the repository:
+->Clone the repository:
 git clone <your-repo-link>
 cd spam-email-classifier
 
-Install dependencies:
+->Install dependencies:
 pip install -r requirements.txt
 
-Run the classifier:
+->Run the classifier:
 python spam_classifier.py
 
-Test with custom messages included in the script.
+->Test with custom messages included in the script.
 
 Technologies:
 Python
