@@ -72,7 +72,18 @@ Evaluation: Accuracy is calculated to check model performance.
 
 Prediction: The trained model can classify new email messages as Spam or Ham.
 
+
+
+
+
+
 Setup & Usage
+
+
+
+
+
+
 
 Clone the repository:
 
@@ -96,7 +107,7 @@ Test with custom messages included in the script.
 
 
 
-#Technologies:
+Technologies:
 
 
 
