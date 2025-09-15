@@ -107,11 +107,7 @@ python spam_classifier.py
 
 
 
-Technologies:
-
-
-
-
+# Technologies:
 
 Python
 
